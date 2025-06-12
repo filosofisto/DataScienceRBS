@@ -3,7 +3,8 @@ project(sample01)
 
 set(CMAKE_CXX_STANDARD 23)
 
-find_package(xtensor REQUIRED)
 add_executable(app src/main.cpp)
-target_link_libraries(app xtensor)
-
+find_package(xtensor REQUIRED)
+target_link_libraries(app PRIVATE xtensor)
+#find_package(xtensor-blas REQUIRED)
+#target_link_libraries(app PRIVATE xtensor xtensor-blas)
